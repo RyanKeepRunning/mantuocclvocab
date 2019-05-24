@@ -71,7 +71,9 @@ const vocabInnerBoard={
     height:'275px',
     color:'#fff',
     borderRadius:'10px',
-    padding:'100px 0'
+    padding:'100px 0',
+    fontFamily: 'Georgia, Times New Roman, Times, serif',
+    fontStyle: 'italic'
 }
 const vocabBoardMiddle={
     width:'80%',

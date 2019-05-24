@@ -66,12 +66,17 @@ const vocabBoard={
     overflowWrap:'break-word'
 }
 const vocabInnerBoard={
+    position:'absolute',
     height:'100%',
     width:'100%',
+    left:'-1px',
     backgroundColor:'#68A691',
     color:'#fff',
     borderRadius:'10px',
-
+    position: 'absolute',
+    verticalAlign: 'middle',
+    textAlign: 'center',
+    padding: '1.5em 0 1em 0'
 }
 const vocabBoardMiddle={
     width:'80%',
@@ -169,9 +174,9 @@ class Homepage extends Component {
                         <div className='row'>
                             <div className='col-12' style={vocabBoard}>
                                 <div style={vocabInnerBoard}>
-                                <div style={centerTextBoard}>
+                                {/* <div style={centerTextBoard}> */}
                                 {this.state.wordPicked[this.state.currentLanguage]}
-                                </div>
+                                {/* </div> */}
                                 </div>
                             </div>
 
@@ -193,10 +198,10 @@ class Homepage extends Component {
                             
                             <div className='col-12' onClick={this.toggleShowAnswer} style={vocabBoard}>
                                 <div style={vocabInnerBoard}>
-                                    <div style={centerTextBoard}>
+                                    {/* <div style={centerTextBoard}> */}
                                     {this.state.showAnswer?this.state.wordPicked[this.getTheOther(this.state.currentLanguage)]:
                                                        <button className='btn btn-secondary'style={{height:'40px'}}>Reveal the answer</button>}
-                                    </div>
+                                    {/* </div> */}
                                 
                                 </div>
                             </div>
