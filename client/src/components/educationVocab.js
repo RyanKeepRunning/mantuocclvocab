@@ -1,3 +1,3 @@
-export default educationVocab = [
-    {e:'',c:''}
-]
+export default {name:'education',content:[
+    {e:'education',c:'教育'}
+]}

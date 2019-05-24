@@ -1,3 +1,3 @@
-export default business = [
-    {e:'',c:''}
-]
+export default {name:'business',content:[
+    {e:'business',c:'商业'}
+]}

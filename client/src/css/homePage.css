@@ -1,0 +1,11 @@
+.category:hover {
+    cursor: pointer;
+    background-color: #68A691
+}
+.controlButton:hover {
+    background-color: #EFC7C2 !important;
+    transition: 0.5s
+}
+.refresh:hover {
+    cursor: pointer;
+}

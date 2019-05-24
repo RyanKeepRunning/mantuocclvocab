@@ -1,3 +1,3 @@
-export default immigrationVocab = [
-    {e:'',c:''}
-]
+export default  {name:'immigration',content:[
+    {e:'immigration',c:'移民'}
+]}
