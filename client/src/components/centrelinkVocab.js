@@ -1,3 +1,15 @@
 export default {name:'centrelink',content:[
-    {e:'centrelink',c:'中央福利署'}
+    {e:'centrelink',c:'中央福利署'},
+    {e:'first owner grant',c:'首次购房补助'},
+    {e:'Department of Health',c:'健康部'},
+    {e:'Department of Human Services',c:'民政服务部'},
+    {e:'character check',c:'品格测试'},
+    {e:'Department of Immigration and Border Protection',c:'移民局'},
+    {e:'Department of Home Affairs',c:'内政部'},
+    {e:'family balance test',c:'家庭平衡测试'},
+    {e:'family composition',c:'家庭组成'},
+    {e:'Administrate Appeals Tribunal',c:'行政上诉仲裁庭'},
+    {e:'actively seeking work',c:'积极寻工'},
+    {e:'nursing home',c:'疗养院'},
+    {e:'OSHC',c:'海外留学生保险'},
 ]}
