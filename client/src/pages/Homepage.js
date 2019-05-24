@@ -63,7 +63,7 @@ const vocabBoard={
     width:'80%',
     height:'275px',
     textAlign:'center',
-    fontSize:'20px',
+    fontSize:'17px',
     overflowWrap:'break-word'
 }
 const vocabInnerBoard={
