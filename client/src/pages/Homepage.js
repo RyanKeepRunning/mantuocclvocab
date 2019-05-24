@@ -107,8 +107,7 @@ class Homepage extends Component {
         })
     }
     handleControl = (language,currentContent) =>{
-        this.setState({currentLanguage:language,wordPicked:this.wordPicker(currentContent),showAnswer:false});
-        this.forceUpdate();
+        this.setState({currentLanguage:language,wordPicked:this.wordPicker(currentContent),showAnswer:false},this.forceUpdate());
     }
     wordPicker = (currentContent)=>{
         const max = currentContent.length;
