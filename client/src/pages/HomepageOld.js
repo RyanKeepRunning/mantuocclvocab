@@ -4,15 +4,15 @@ const containerStyle={
     textAlign:'center'
 }
 const titleStyle={
-    borderLeft:'5px solid #68A691',
-    borderRight:'5px solid #68A691',
     textAlign:'center',
-    marginTop:'15px',
-    marginBottom:'20px',
-    backgroundColor:'#BFD3C1'
+    marginTop:'50px',
+    marginBottom:'20px'
 }
 const titleFontStyle={
-    fontSize:'30px'
+    borderLeft:'5px solid #68A691',
+    borderRight:'5px solid #68A691',
+    fontSize:'32px',
+    backgroundColor:'#BFD3C1'
 }
 const categoryContainerStyle={
     border:'2px solid gray',
@@ -23,7 +23,7 @@ const categoryContainerStyle={
     borderRadius:'10px',
 }
 const categoryStyle={
-    fontSize:'17px',
+    fontSize:'20px',
     marginBottom:'6px'
 }
 const currentCategoryStyle=Object.assign({},categoryStyle,{
@@ -34,62 +34,50 @@ const currentCategoryStyle=Object.assign({},categoryStyle,{
 const vocabBoardFrame={
     border:'2px solid gray',
     borderStyle:'outset',
-    marginTop:'20px',
-    height:'320px',
+    marginTop:'50px',
+    height:'300px',
     width:'80%',
     backgroundColor:'#BFD3C1',
     borderRadius: '10px',
-    padding:'20px',
+    padding:'10px',
 }
-// const controlBoard={
-//     border:'2px solid gray',
-//     borderStyle:'outset',
-//     marginTop:'50px',
-//     height:'300px',
-//     width:'80%',
-//     backgroundColor:'#BFD3C1',
-//     borderRadius: '10px',
-//     paddingTop:'50px',
-//     paddingBottom:'50px'
-// }
+const controlBoard={
+    border:'2px solid gray',
+    borderStyle:'outset',
+    marginTop:'50px',
+    height:'300px',
+    width:'80%',
+    backgroundColor:'#BFD3C1',
+    borderRadius: '10px',
+    paddingTop:'50px',
+    paddingBottom:'50px'
+}
 const controlButtonStyle={
     backgroundColor:'#FFE5D4',
-    fontSize:'15px',
+    fontSize:'40px',
+    marginBottom:'60px',
     borderRadius:'8px'
 }
 
 const vocabBoard={
     width:'80%',
-    height:'110px',
+    height:'275px',
     textAlign:'center',
-    fontSize:'20px',
+    fontSize:'17px',
     overflowWrap:'break-word'
 }
 const vocabInnerBoard={
-    height:'100%',
-    width:'100%',
     backgroundColor:'#68A691',
+    height:'275px',
     color:'#fff',
     borderRadius:'10px',
-
+    padding:'100px 0'
 }
 const vocabBoardMiddle={
     width:'80%',
-    height:'20px',
-    lineHeight:'20px',
-    margin:'20px 0'
+    height:'300px',
+    lineHeight:'300px'
 }
-const centerTextBoard={
-    position: 'absolute',
-    width: '90%',
-    height: '100%',
-    verticalAlign: 'middle',
-    textAlign: 'center',
-    fontFamily: "Georgia, Times New Roman, Times, serif",
-    padding: '1.6em 0 0 0',
-    fontSize:'20px'
-}
-
 
 class Homepage extends Component {
     constructor(props){
@@ -135,7 +123,8 @@ class Homepage extends Component {
             }
             return(vocab.name);
         });
-
+        console.log(this.state.wordPicked)
+        console.log(this.state.wordPicked[this.state.currentLanguage])
         return(
             <div className='container' style={containerStyle}>
                 <div className='row' style={containerStyle}>
@@ -153,43 +142,31 @@ class Homepage extends Component {
                             }
                         })}
                     </div>
-
-                    <div className='col-12' style={vocabBoardFrame}>
+                    <div className='col-12 col-md-3' style={controlBoard}>
+                        <div>
+                            <button className='controlButton' onClick={()=>{this.handleControl('c',currentContent)}} style={controlButtonStyle}>Chinese</button>
+                        </div>
+                        <div>
+                            <button className='controlButton' onClick={()=>{this.handleControl('e',currentContent)}} style={controlButtonStyle}>English</button>
+                        </div>
+                    </div>
+                    <div className='col-md-1'></div>
+                    <div className='col-12 col-md-8' style={vocabBoardFrame}>
                         <div className='row'>
-                            <div className='col-12' style={vocabBoard}>
-                                
+                            <div className='col-5' style={vocabBoard}>
+                                <div/>
                                 <div style={vocabInnerBoard}>
-                                <div style={centerTextBoard}>
-                                {this.state.wordPicked[this.state.currentLanguage]}
-                                </div>
-                                
-
+                                    {this.state.wordPicked[this.state.currentLanguage]}
                                 </div>
                             </div>
-
-                            <div className='col-4' style={vocabBoardMiddle}>
-                                <button className='controlButton' onClick={()=>{this.handleControl('c',currentContent)}} style={controlButtonStyle}>Chinese</button>
-                                {/* <i className="fas fa-redo fa-2x refresh" style={{color:'#68A691'}} onClick={()=>this.handleControl(this.state.currentLanguage,currentContent)}></i>
-                                <button className='controlButton' onClick={()=>{this.handleControl('e',currentContent)}} style={controlButtonStyle}>English</button> */}
-                            </div>
-                            <div className='col-4' style={vocabBoardMiddle}>
-                                {/* <button className='controlButton' onClick={()=>{this.handleControl('c',currentContent)}} style={controlButtonStyle}>Chinese</button> */}
+                            <div className='col-2' style={vocabBoardMiddle}>
                                 <i className="fas fa-redo fa-2x refresh" style={{color:'#68A691'}} onClick={()=>this.handleControl(this.state.currentLanguage,currentContent)}></i>
-                                {/* <button className='controlButton' onClick={()=>{this.handleControl('e',currentContent)}} style={controlButtonStyle}>English</button> */}
                             </div>
-                            <div className='col-4' style={vocabBoardMiddle}>
-                                {/* <button className='controlButton' onClick={()=>{this.handleControl('c',currentContent)}} style={controlButtonStyle}>Chinese</button>
-                                <i className="fas fa-redo fa-2x refresh" style={{color:'#68A691'}} onClick={()=>this.handleControl(this.state.currentLanguage,currentContent)}></i> */}
-                                <button className='controlButton' onClick={()=>{this.handleControl('e',currentContent)}} style={controlButtonStyle}>English</button>
-                            </div>
-                            
-                            <div className='col-12' onClick={this.toggleShowAnswer} style={vocabBoard}>
+                            <div className='col-5' onClick={this.toggleShowAnswer} style={vocabBoard}>
+                                <div/>
                                 <div style={vocabInnerBoard}>
-                                    <div style={centerTextBoard}>
-                                    {this.state.showAnswer?this.state.wordPicked[this.getTheOther(this.state.currentLanguage)]:
-                                                       <button className='btn btn-secondary'style={{height:'40px'}}>Reveal the answer</button>}
-                                    </div>
-                                
+                                {this.state.showAnswer?this.state.wordPicked[this.getTheOther(this.state.currentLanguage)]:
+                                                       <button className='btn btn-secondary'style={{height:'100px'}}>Reveal the answer</button>}
                                 </div>
                             </div>
                         </div>
