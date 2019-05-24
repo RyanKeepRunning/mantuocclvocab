@@ -75,7 +75,7 @@ const vocabInnerBoard={
     position: 'absolute',
     verticalAlign: 'middle',
     textAlign: 'center',
-    padding: '1.5em 0 1em 0'
+    padding: '1.5em 0.6em 1em 0.6em'
 }
 const vocabBoardMiddle={
     width:'80%',
