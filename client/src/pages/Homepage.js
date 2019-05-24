@@ -80,13 +80,11 @@ const vocabBoardMiddle={
     margin:'20px 0'
 }
 const centerTextBoard={
+    marginTop:'30px',
     position: 'absolute',
     width: '90%',
     height: '100%',
-    verticalAlign: 'middle',
-    textAlign: 'center',
     fontFamily: "Georgia, Times New Roman, Times, serif",
-    padding: '1.6em 0 0 0',
     fontSize:'20px'
 }
 
@@ -135,6 +133,8 @@ class Homepage extends Component {
             }
             return(vocab.name);
         });
+
+        console.log(this.state.wordPicked[this.state.currentLanguage]);
 
         return(
             <div className='container' style={containerStyle}>
