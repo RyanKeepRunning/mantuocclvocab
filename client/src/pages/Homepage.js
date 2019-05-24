@@ -66,7 +66,6 @@ const vocabBoard={
     overflowWrap:'break-word'
 }
 const vocabInnerBoard={
-    position:'absolute',
     height:'100%',
     width:'100%',
     left:'-1px',
