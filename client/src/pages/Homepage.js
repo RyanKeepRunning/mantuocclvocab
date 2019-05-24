@@ -98,7 +98,7 @@ class Homepage extends Component {
             currentLanguage:"c",
             wordPicked:{e:'',c:'Click "Chinese" or "English" to generate a random word'},
             showAnswer:false,
-            needReset:false
+
         }
     }
     handleClickCategory = (category)=>{
@@ -106,12 +106,17 @@ class Homepage extends Component {
             currentCategory:category
         })
     }
+    // handleControl = (language,currentContent) =>{
+    //     if(this.state.needReset){
+    //         this.setState({needReset:false,wordPicked:""})
+    //     }else{
+    //         this.setState({currentLanguage:language,needReset:true,wordPicked:this.wordPicker(currentContent),showAnswer:false});
+    //     }
+    // }
     handleControl = (language,currentContent) =>{
-        if(this.state.needReset){
-            this.setState({needReset:false,wordPicked:""})
-        }else{
-            this.setState({currentLanguage:language,needReset:true,wordPicked:this.wordPicker(currentContent),showAnswer:false});
-        }
+        this.setState({wordPicked:""},()=>{
+            this.setState({currentLanguage:language,wordPicked:this.wordPicker(currentContent),showAnswer:false});
+        })
     }
     wordPicker = (currentContent)=>{
         const max = currentContent.length;
@@ -140,7 +145,7 @@ class Homepage extends Component {
             return(vocab.name);
         });
 
-        console.log(this.state.wordPicked[this.state.currentLanguage]);
+        // console.log(this.state.wordPicked[this.state.currentLanguage]);
 
         return(
             <div className='container' style={containerStyle}>
