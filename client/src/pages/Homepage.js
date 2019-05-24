@@ -80,6 +80,7 @@ const vocabBoardMiddle={
     margin:'20px 0'
 }
 const centerTextBoard={
+    left:'35px',
     marginTop:'30px',
     position: 'absolute',
     width: '90%',
@@ -160,7 +161,7 @@ class Homepage extends Component {
                                 
                                 <div style={vocabInnerBoard}>
                                 <div style={centerTextBoard}>
-                                {this.state.wordPicked[this.state.currentLanguage]}
+                                {this.state.wordPicked[this.state.currentLanguage]+"                          "}
                                 </div>
                                 
 
