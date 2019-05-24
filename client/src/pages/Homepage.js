@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import '../css/homePage.css';
+import VocabBoard from '../components/VocabBoard';
 const containerStyle={
     textAlign:'center'
 }
@@ -79,7 +80,15 @@ const vocabBoardMiddle={
     lineHeight:'20px',
     margin:'20px 0'
 }
-
+const centerTextBoard={
+    position: 'absolute',
+    width: '90%',
+    height: '100%',
+    verticalAlign: 'middle',
+    textAlign: 'center',
+    padding: '1.6em 0 0 0',
+    fontSize:'20px'
+}
 
 
 class Homepage extends Component {
@@ -149,16 +158,7 @@ class Homepage extends Component {
 
                     <div className='col-12' style={vocabBoardFrame}>
                         <div className='row'>
-                            <div className='col-12' style={vocabBoard}>
-                                
-                                <div style={vocabInnerBoard}>
-                                {/* <div style={centerTextBoard}> */}
-                                {this.state.wordPicked[this.state.currentLanguage]}
-                                {/* </div> */}
-                                
-
-                                </div>
-                            </div>
+                            <VocabBoard wordPicked = {this.state.wordPicked[this.state.currentLanguage]}/>
 
                             <div className='col-4' style={vocabBoardMiddle}>
                                 <button className='controlButton' onClick={()=>{this.handleControl('c',currentContent)}} style={controlButtonStyle}>Chinese</button>
@@ -178,10 +178,10 @@ class Homepage extends Component {
                             
                             <div className='col-12' onClick={this.toggleShowAnswer} style={vocabBoard}>
                                 <div style={vocabInnerBoard}>
-                                    {/* <div style={centerTextBoard}> */}
+                                    <div style={centerTextBoard}>
                                     {this.state.showAnswer?this.state.wordPicked[this.getTheOther(this.state.currentLanguage)]:
                                                        <button className='btn btn-secondary'style={{height:'40px'}}>Reveal the answer</button>}
-                                    {/* </div> */}
+                                    </div>
                                 
                                 </div>
                             </div>
