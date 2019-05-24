@@ -71,7 +71,6 @@ const vocabInnerBoard={
     backgroundColor:'#68A691',
     color:'#fff',
     borderRadius:'10px',
-    textAlign:'center'
 
 }
 const vocabBoardMiddle={
@@ -80,12 +79,7 @@ const vocabBoardMiddle={
     lineHeight:'20px',
     margin:'20px 0'
 }
-const centerTextBoard={
-    width: '100%',
-    height: '100%',
-    fontFamily: "Georgia, Times New Roman, Times, serif",
-    fontSize:'20px'
-}
+
 
 
 class Homepage extends Component {
@@ -158,9 +152,9 @@ class Homepage extends Component {
                             <div className='col-12' style={vocabBoard}>
                                 
                                 <div style={vocabInnerBoard}>
-                                <div style={centerTextBoard}>
-                                {this.state.wordPicked[this.state.currentLanguage]+"                                                         "}
-                                </div>
+                                {/* <div style={centerTextBoard}> */}
+                                {this.state.wordPicked[this.state.currentLanguage]}
+                                {/* </div> */}
                                 
 
                                 </div>
@@ -184,10 +178,10 @@ class Homepage extends Component {
                             
                             <div className='col-12' onClick={this.toggleShowAnswer} style={vocabBoard}>
                                 <div style={vocabInnerBoard}>
-                                    <div style={centerTextBoard}>
+                                    {/* <div style={centerTextBoard}> */}
                                     {this.state.showAnswer?this.state.wordPicked[this.getTheOther(this.state.currentLanguage)]:
                                                        <button className='btn btn-secondary'style={{height:'40px'}}>Reveal the answer</button>}
-                                    </div>
+                                    {/* </div> */}
                                 
                                 </div>
                             </div>
