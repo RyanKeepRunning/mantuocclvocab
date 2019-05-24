@@ -4,7 +4,7 @@ const vocabBoard={
     height:'110px',
     textAlign:'center',
     fontSize:'20px',
-    overflowWrap:'break-word'
+    overflow:'auto'
 }
 const vocabInnerBoard={
     height:'100%',
@@ -31,7 +31,7 @@ class VocabBoard extends Component{
                                 
                 <div style={vocabInnerBoard}>
                 <div style={centerTextBoard}>
-                {this.props.wordPicked}
+                    {this.props.wordPicked}
                 </div>
                 
 
