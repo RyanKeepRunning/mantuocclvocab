@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import '../css/homePage.css';
-import VocabBoard from '../components/VocabBoard';
 const containerStyle={
     textAlign:'center'
 }
@@ -99,6 +98,7 @@ class Homepage extends Component {
             currentLanguage:"c",
             wordPicked:{e:'',c:'Click "Chinese" or "English" to generate a random word'},
             showAnswer:false,
+            needReset:false
         }
     }
     handleClickCategory = (category)=>{
@@ -107,7 +107,11 @@ class Homepage extends Component {
         })
     }
     handleControl = (language,currentContent) =>{
-        this.setState({currentLanguage:language,wordPicked:this.wordPicker(currentContent),showAnswer:false},this.forceUpdate());
+        if(this.state.needReset){
+            this.setState({needReset:false,wordPicked:""})
+        }else{
+            this.setState({currentLanguage:language,needReset:true,wordPicked:this.wordPicker(currentContent),showAnswer:false});
+        }
     }
     wordPicker = (currentContent)=>{
         const max = currentContent.length;
@@ -158,7 +162,13 @@ class Homepage extends Component {
 
                     <div className='col-12' style={vocabBoardFrame}>
                         <div className='row'>
-                            <VocabBoard wordPicked = {this.state.wordPicked[this.state.currentLanguage]}/>
+                            <div className='col-12' style={vocabBoard}>
+                                <div style={vocabInnerBoard}>
+                                <div style={centerTextBoard}>
+                                {this.state.wordPicked[this.state.currentLanguage]}
+                                </div>
+                                </div>
+                            </div>
 
                             <div className='col-4' style={vocabBoardMiddle}>
                                 <button className='controlButton' onClick={()=>{this.handleControl('c',currentContent)}} style={controlButtonStyle}>Chinese</button>
