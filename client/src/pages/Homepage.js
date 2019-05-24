@@ -71,6 +71,7 @@ const vocabInnerBoard={
     backgroundColor:'#68A691',
     color:'#fff',
     borderRadius:'10px',
+    textAlign:'center'
 
 }
 const vocabBoardMiddle={
@@ -80,10 +81,7 @@ const vocabBoardMiddle={
     margin:'20px 0'
 }
 const centerTextBoard={
-    left:'35px',
-    marginTop:'30px',
-    position: 'absolute',
-    width: '90%',
+    width: '100%',
     height: '100%',
     fontFamily: "Georgia, Times New Roman, Times, serif",
     fontSize:'20px'
@@ -161,7 +159,7 @@ class Homepage extends Component {
                                 
                                 <div style={vocabInnerBoard}>
                                 <div style={centerTextBoard}>
-                                {this.state.wordPicked[this.state.currentLanguage]+"                          "}
+                                {this.state.wordPicked[this.state.currentLanguage]+"                                                         "}
                                 </div>
                                 
 
