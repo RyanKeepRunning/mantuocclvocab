@@ -41,17 +41,7 @@ const vocabBoardFrame={
     borderRadius: '10px',
     padding:'20px',
 }
-// const controlBoard={
-//     border:'2px solid gray',
-//     borderStyle:'outset',
-//     marginTop:'50px',
-//     height:'300px',
-//     width:'80%',
-//     backgroundColor:'#BFD3C1',
-//     borderRadius: '10px',
-//     paddingTop:'50px',
-//     paddingBottom:'50px'
-// }
+
 const controlButtonStyle={
     backgroundColor:'#FFE5D4',
     fontSize:'15px',
@@ -83,15 +73,7 @@ const vocabBoardMiddle={
     lineHeight:'20px',
     margin:'20px 0'
 }
-const centerTextBoard={
-    position: 'absolute',
-    width: '90%',
-    height: '100%',
-    verticalAlign: 'middle',
-    textAlign: 'center',
-    padding: '1.6em 0 0 0',
-    fontSize:'20px'
-}
+
 
 
 class Homepage extends Component {
@@ -149,7 +131,6 @@ class Homepage extends Component {
             return(vocab.name);
         });
 
-        // console.log(this.state.wordPicked[this.state.currentLanguage]);
 
         return(
             <div className='container' style={containerStyle}>
@@ -173,34 +154,32 @@ class Homepage extends Component {
                         <div className='row'>
                             <div className='col-12' style={vocabBoard}>
                                 <div style={vocabInnerBoard}>
-                                {/* <div style={centerTextBoard}> */}
+
                                 {this.state.wordPicked[this.state.currentLanguage]}
-                                {/* </div> */}
+
                                 </div>
                             </div>
 
                             <div className='col-4' style={vocabBoardMiddle}>
                                 <button className='controlButton' onClick={()=>{this.handleControl('c',currentContent)}} style={controlButtonStyle}>Chinese</button>
-                                {/* <i className="fas fa-redo fa-2x refresh" style={{color:'#68A691'}} onClick={()=>this.handleControl(this.state.currentLanguage,currentContent)}></i>
-                                <button className='controlButton' onClick={()=>{this.handleControl('e',currentContent)}} style={controlButtonStyle}>English</button> */}
+                    
                             </div>
                             <div className='col-4' style={vocabBoardMiddle}>
-                                {/* <button className='controlButton' onClick={()=>{this.handleControl('c',currentContent)}} style={controlButtonStyle}>Chinese</button> */}
+                               
                                 <i className="fas fa-redo fa-2x refresh" style={{color:'#68A691'}} onClick={()=>this.handleControl(this.state.currentLanguage,currentContent)}></i>
-                                {/* <button className='controlButton' onClick={()=>{this.handleControl('e',currentContent)}} style={controlButtonStyle}>English</button> */}
+                                
                             </div>
                             <div className='col-4' style={vocabBoardMiddle}>
-                                {/* <button className='controlButton' onClick={()=>{this.handleControl('c',currentContent)}} style={controlButtonStyle}>Chinese</button>
-                                <i className="fas fa-redo fa-2x refresh" style={{color:'#68A691'}} onClick={()=>this.handleControl(this.state.currentLanguage,currentContent)}></i> */}
+                               
                                 <button className='controlButton' onClick={()=>{this.handleControl('e',currentContent)}} style={controlButtonStyle}>English</button>
                             </div>
                             
                             <div className='col-12' onClick={this.toggleShowAnswer} style={vocabBoard}>
                                 <div style={vocabInnerBoard}>
-                                    {/* <div style={centerTextBoard}> */}
+                                    
                                     {this.state.showAnswer?this.state.wordPicked[this.getTheOther(this.state.currentLanguage)]:
                                                        <button className='btn btn-secondary'style={{height:'40px'}}>Reveal the answer</button>}
-                                    {/* </div> */}
+                                  
                                 
                                 </div>
                             </div>
