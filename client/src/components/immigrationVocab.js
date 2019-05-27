@@ -16,5 +16,5 @@ export default  {name:'immigration',content:[
     {e:'recognition of qualification',c:'职业认证'},
     {e:'induction',c:'入职'},
     {e:'Victorian Civil & Administrative Tribunal',c:'维多利亚民事行政仲裁庭'},
-    {e:'tourist vis',c:'旅行者签证'},
+    {e:'tourist visa',c:'旅行者签证'},
 ]}

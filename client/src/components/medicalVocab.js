@@ -82,7 +82,7 @@ export default  {name:'medical',content:[
     {e:'glaucoma',c:'青光眼'},
     {e:'hernia',c:'疝气'},
     {e:'hypertension,high blood pressure',c:'高血压'},
-    {e:'hypiotension,low blood pressure',c:'低血压'},
+    {e:'hypotension,low blood pressure',c:'低血压'},
     {e:'urinary/faecal incontinence',c:'小/大便失禁'},
     {e:'influenza/flu',c:'流感'},
     {e:'hip',c:'臀部'},
