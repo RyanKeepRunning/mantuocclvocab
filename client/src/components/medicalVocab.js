@@ -54,7 +54,7 @@ export default  {name:'medical',content:[
     {e:'infectious/contagious',c:'有传染性的'},
     {e:'gall inflammation',c:'胆囊炎'},
     {e:'collapse',c:'昏倒，崩溃'},
-    {e:'ringing of the year',c:'耳鸣'},
+    {e:'ringing of the ear',c:'耳鸣'},
     {e:'amnesia',c:'健忘症'},
     {e:'anaemia',c:'贫血'},
     {e:'anorexia',c:'厌食症'},
