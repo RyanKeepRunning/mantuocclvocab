@@ -27,7 +27,7 @@ export default  {name:'medical',content:[
     {e:'antibiotic',c:'抗生素'},
     {e:'crutches',c:'三角拐杖'},
     {e:'chemotherapy',c:'化疗'},
-    {e:'dementia',c:'老年痴呆症'},
+    {e:'dementia',c:'痴呆症'},
     {e:'measles',c:'麻疹'},
     {e:'haemorrhage',c:'大出血'},
     {e:'haemorrhoids',c:'痔疮'},
