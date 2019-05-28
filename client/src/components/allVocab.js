@@ -13,5 +13,4 @@ content = content.concat(businessVocab.content)
                   .concat(lawVocab.content)
                   .concat(medicalVocab.content);
 const allVocab = {name:'all',content};
-console.log(allVocab);
 export default allVocab;

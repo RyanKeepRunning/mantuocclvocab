@@ -84,6 +84,7 @@ class Homepage extends Component {
             currentLanguage:"c",
             wordPicked:{e:'',c:'Click "Chinese" or "English" to generate a random word'},
             showAnswer:false,
+            lastWordPicked:{e:'',c:''}
 
         }
     }
@@ -101,12 +102,17 @@ class Homepage extends Component {
     // }
     handleControl = (language,currentContent) =>{
         this.setState({wordPicked:""},()=>{
-            this.setState({currentLanguage:language,wordPicked:this.wordPicker(currentContent),showAnswer:false});
+            const wordPicked = this.wordPicker(currentContent);
+            this.setState({currentLanguage:language,wordPicked,showAnswer:false,lastWordPicked:wordPicked});
         })
     }
     wordPicker = (currentContent)=>{
         const max = currentContent.length;
-        const index = Math.floor(Math.random() * Math.floor(max));
+        let index = Math.floor(Math.random() * Math.floor(max));
+        while(JSON.stringify(currentContent[index])===JSON.stringify(this.state.lastWordPicked)){
+            const newIndex = Math.floor(Math.random() * Math.floor(max));
+            index = newIndex;
+        }
         return currentContent[index];
     }
     getTheOther=(language)=>{
@@ -131,11 +137,10 @@ class Homepage extends Component {
             return(vocab.name);
         });
 
-
         return(
             <div className='container' style={containerStyle}>
                 <div className='row' style={containerStyle}>
-                    <div className='col-12' style={titleStyle}><span style={titleFontStyle}>Welcome to Mantuo Vocab System</span></div>
+                    <div className='col-12' style={titleStyle}><span style={titleFontStyle}>Welcome to CCL Vocab System</span></div>
                     <div className='col-12 row' style={categoryContainerStyle}>
                         <div className='col-12 category' onClick={()=>this.handleClickCategory('all')}
                         style={this.state.currentCategory==='all'?currentCategoryStyle:categoryStyle}>all</div>
@@ -146,6 +151,8 @@ class Homepage extends Component {
                                         style={this.state.currentCategory===category?currentCategoryStyle:categoryStyle}>
                                     {category}
                                     </div>)
+                            }else{
+                                return null;
                             }
                         })}
                     </div>
