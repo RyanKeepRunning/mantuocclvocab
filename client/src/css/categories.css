@@ -1,0 +1,13 @@
+.category:hover {
+    cursor: pointer;
+    background-color: #68A691;
+    border-radius: 5px
+}
+.categoryContainer {
+    border:2px solid gray;
+    border-style:outset;
+    text-align:center;
+    margin-left:1px;
+    background-color:#BFD3C1;
+    border-radius:10px
+}

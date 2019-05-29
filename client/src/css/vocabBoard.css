@@ -1,0 +1,51 @@
+.controlButton {
+    background-color:#FFE5D4;
+    font-size:15px;
+    border-radius:8px
+}
+.controlButton:hover {
+    background-color: #EFC7C2 !important;
+    transition: 0.5s
+}
+.refresh:hover {
+    cursor: pointer;
+    color: #296041
+}
+.vocabBoardFrame{
+    border:2px solid gray;
+    border-style:outset;
+    margin-top:20px;
+    height:320px;
+    width:80%;
+    background-color:#BFD3C1;
+    border-radius: 10px;
+    padding:20px
+}
+.vocabBoard {
+    width:80%;
+    height:110px;
+    text-align:center;
+    font-size:20px;
+    overflow-wrap:break-word
+}
+.vocabInnerBoard{
+    height:100%;
+    width:100%;
+    left:-1px;
+    background-color:#68A691;
+    color:#fff;
+    border-radius:10px;
+    position: absolute;
+    vertical-align: middle;
+    text-align: center;
+    padding: 1.5em 0.6em 1em 0.6em
+}
+.vocabBoardMid{
+    width:80%;
+    height:20px;
+    line-height:20px;
+    margin:20px 0
+}
+.disguiseButton{
+    height:40px
+}
