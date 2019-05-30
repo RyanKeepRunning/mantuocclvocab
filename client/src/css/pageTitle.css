@@ -1,10 +1,22 @@
-.title {
+.titleGreen {
     border-left:5px solid #68A691;
     border-right:5px solid #68A691;
     text-align:center;
     margin-top:15px;
     margin-bottom:20px;
-    background-color:#BFD3C1
+    background-color:#BFD3C1;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+}
+.titleBlue {
+    border-left:5px solid #6699CC;
+    border-right:5px solid #6699CC;
+    text-align:center;
+    margin-top:15px;
+    margin-bottom:20px;
+    background-color:#99CCFF;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
 }
 .titleText {
     font-size:30px

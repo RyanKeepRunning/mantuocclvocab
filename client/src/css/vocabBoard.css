@@ -1,25 +1,45 @@
 .controlButton {
     background-color:#FFE5D4;
     font-size:15px;
-    border-radius:8px
+    border-radius:8px;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
 }
 .controlButton:hover {
-    background-color: #EFC7C2 !important;
-    transition: 0.5s
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
 }
-.refresh:hover {
+.responsiveIconGreen {
+    color:#68A691;
+    transition:0.5s
+}
+.responsiveIconGreen:hover {
     cursor: pointer;
-    color: #296041
+    color: #3d6054
 }
-.vocabBoardFrame{
+.responsiveIconBlue {
+    color:#6699CC;
+    transition:0.5s
+}
+.responsiveIconBlue:hover {
+    cursor: pointer;
+    color: #003366
+}
+.disguiseButton{
+    height:40px
+}
+.vocabBoardFrameGreen{
     border:2px solid gray;
     border-style:outset;
     margin-top:20px;
-    height:320px;
+    height:370px;
     width:80%;
     background-color:#BFD3C1;
     border-radius: 10px;
-    padding:20px
+    padding:20px;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
 }
 .vocabBoard {
     width:80%;
@@ -28,7 +48,7 @@
     font-size:20px;
     overflow-wrap:break-word
 }
-.vocabInnerBoard{
+.vocabInnerBoardGreen{
     height:100%;
     width:100%;
     left:-1px;
@@ -38,7 +58,9 @@
     position: absolute;
     vertical-align: middle;
     text-align: center;
-    padding: 1.5em 0.6em 1em 0.6em
+    padding: 1.5em 0.6em 1em 0.6em;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
 }
 .vocabBoardMid{
     width:80%;
@@ -46,6 +68,71 @@
     line-height:20px;
     margin:20px 0
 }
-.disguiseButton{
-    height:40px
+.modeTogglerGreen{
+    width:100%;
+    height:28px;
+    line-height:28px;
+    background-color: #68A691;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom:25px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+    border-radius: 8px;
+}
+.modeTogglerBlue{
+    width:100%;
+    height:28px;
+    line-height:28px;
+    background-color: #6699CC; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom:25px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+    border-radius: 8px;
+}
+.modeTogglerBlue:hover {
+    box-shadow: 0 6px 9px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.modeTogglerGreen:hover {
+    box-shadow: 0 6px 9px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.vocabBoardFrameBlue{
+    border:2px solid gray;
+    border-style:outset;
+    margin-top:20px;
+    height:425px;
+    width:80%;
+    background-color:#99CCFF;
+    border-radius: 10px;
+    padding:20px;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+}
+
+.vocabInnerBoardBlue{
+    height:100%;
+    width:100%;
+    left:-1px;
+    background-color:#6699CC;
+    color:#fff;
+    border-radius:10px;
+    position: absolute;
+    vertical-align: middle;
+    text-align: center;
+    padding: 1.5em 0.6em 1em 0.6em;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
 }

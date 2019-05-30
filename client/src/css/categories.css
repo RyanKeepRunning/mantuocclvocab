@@ -1,13 +1,37 @@
-.category:hover {
+.categoryGreen:hover {
     cursor: pointer;
     background-color: #68A691;
-    border-radius: 5px
+    border-radius: 5px;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
 }
-.categoryContainer {
+.categoryGreenContainer {
+    border:2px solid gray;
+    border-style:outset;
+    text-align:center;
+    margin-left:0.2px;
+    background-color:#BFD3C1;
+    border-radius:10px;
+    padding-top:6px;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+}
+.categoryBlue:hover {
+    cursor: pointer;
+    background-color: #6699CC;
+    border-radius: 5px;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+    color:#fff
+}
+.categoryBlueContainer {
     border:2px solid gray;
     border-style:outset;
     text-align:center;
     margin-left:1px;
-    background-color:#BFD3C1;
-    border-radius:10px
+    background-color:#99CCFF;
+    border-radius:10px;
+    padding-top:6px;
+    -webkit-transition-duration: 0.8s;
+    transition-duration: 0.8s;
 }

@@ -8,10 +8,10 @@ class VocabBoard extends Component{
             currentLanguage:"c",
             wordPicked:{e:'',c:'Generate vocab by clicking "Chinese", "English" or "refresh"'},
             showAnswer:false,
-            lastWordPicked:{e:'',c:''}
+            lastWordPicked:{e:'',c:''},
         }
     }
-    getTheOther=(language)=>{
+    getTheOtherLanguage=(language)=>{
         if(language==='e'){
             return 'c'
         }else{
@@ -36,43 +36,64 @@ class VocabBoard extends Component{
             const newIndex = Math.floor(Math.random() * Math.floor(max));
             index = newIndex;
         }
-        return currentContent[index];
+        let wordPicked = Object.assign({},currentContent[index]);
+        if(this.props.mode==="Exhaustion"){
+            this.props.removePickedWord(index);
+            if(JSON.stringify(wordPicked)==='{}'){
+                wordPicked={e:`${this.props.currentCategory} vocab has been completed.`,c:`${this.props.currentCategory} 词汇已完成。`}
+            }
+        }
+        return wordPicked;
+    }
+    resetVocab=()=>{
+        this.setState({
+            wordPicked:{e:`All vocabs got recharged!`,c:`各类词汇均已重置`}
+        },()=>{
+            this.props.resetVocab();
+        })
+    }
+    toggleMode=()=>{
+        this.props.toggleMode();
     }
     render(){
         return(
-            <div className='col-12 vocabBoardFrame' >
+            <div className={`col-12 ${this.props.mode==='Exhaustion'?'vocabBoardFrameBlue':'vocabBoardFrameGreen'}`}>
                 <div className='row'>
-                    <div className='col-12 vocabBoard' >
-                        <div className='vocabInnerBoard'>
+                    <div className='col-12'style={{paddingLeft:0,paddingRight:0}}   >
+                        <button className={`modeToggler${this.props.mode==='Exhaustion'?'Blue':'Green'}`}  
+                        onClick={this.toggleMode}>{this.props.mode} mode</button>
+                    </div>
+                    <div className='col-12 vocabBoard'>
+                        <div className={`${this.props.mode==='Exhaustion'?'vocabInnerBoardBlue':'vocabInnerBoardGreen'}`}>
 
                         {this.state.wordPicked[this.state.currentLanguage]}
 
                         </div>
                     </div>
-
+                    
                     <div className='col-4 vocabBoardMid' >
                         <button className='controlButton' onClick={()=>{this.handleControl('c',this.props.currentContent)}}>Chinese</button>
-            
                     </div>
                     <div className='col-4 vocabBoardMid' >
-                        
-                        <i className="fas fa-redo fa-2x refresh" style={{color:'#68A691'}} onClick={()=>this.handleControl(this.state.currentLanguage,this.props.currentContent)}></i>
-                        
+                        <i className={`fas fa-step-forward fa-2x ${this.props.mode==='Exhaustion'? 'responsiveIconBlue':'responsiveIconGreen'}`} onClick={()=>this.handleControl(this.state.currentLanguage,this.props.currentContent)}></i>
                     </div>
                     <div className='col-4 vocabBoardMid' >
-                        
                         <button className='controlButton' onClick={()=>{this.handleControl('e',this.props.currentContent)}} >English</button>
                     </div>
                     
+                    
                     <div className='col-12 vocabBoard' onClick={this.toggleShowAnswer} >
-                        <div className='vocabInnerBoard' >
-                            
-                            {this.state.showAnswer?this.state.wordPicked[this.getTheOther(this.state.currentLanguage)]:
+                        <div className={`${this.props.mode==='Exhaustion'?'vocabInnerBoardBlue':'vocabInnerBoardGreen'}`}>
+                            {this.state.showAnswer?this.state.wordPicked[this.getTheOtherLanguage(this.state.currentLanguage)]:
                                                 <button className='btn btn-secondary disguiseButton'>Reveal the answer</button>}
-                            
-                        
                         </div>
                     </div>
+                    {this.props.mode==='Exhaustion'?
+                        <div className='col-12 vocabBoardMid' >
+                            <i className={`fas fa-redo fa-2x responsiveIconBlue`} onClick={this.resetVocab}></i>
+                        </div>
+                        :null
+                    }
                 </div>
             </div>
         )
