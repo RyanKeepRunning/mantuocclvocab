@@ -11,7 +11,7 @@ export default {name:'business',content:[
     {e:'draft,remittance',c:'汇款'},
     {e:'maximum liability',c:'最高保额'},
     {e:'comprehensive insurance',c:'全险'},
-    {e:'rayalties',c:'版税'},
+    {e:'royalties',c:'版税'},
     {e:'statement of account',c:'会计报表'},
     {e:'stock exchange',c:'股票交易所'},
     {e:'tariff',c:'关税'},

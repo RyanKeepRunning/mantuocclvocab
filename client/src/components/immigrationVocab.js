@@ -5,7 +5,7 @@ export default  {name:'immigration',content:[
     {e:'Department of Home Affairs',c:'内政部'},
     {e:'approval',c:'批准'},
     {e:'consul',c:'领事'},
-    {e:'embassy',c:'大使管'},
+    {e:'embassy',c:'大使馆'},
     {e:'embassador',c:'大使'},
     {e:'ethnic',c:'种族的'},
     {e:'grant',c:'授予'},
