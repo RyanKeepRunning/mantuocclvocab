@@ -17,7 +17,7 @@ class Categories extends Component{
                 borderRadius: '5px',
                 color:'#fff',
                 transitionDuration:'0.8s',
-                webkitTransitionDuration: '0.8s'
+                WebkitTransitionDuration: '0.8s'
             })
         }else{
             currentCategoryStyle=Object.assign({},categoryStyle,{
@@ -25,7 +25,7 @@ class Categories extends Component{
                 borderRadius: '5px',
                 color:'#fff',
                 transitionDuration:'0.8s',
-                webkitTransitionDuration: '0.8s'
+                WebkitTransitionDuration: '0.8s'
             })
         }
 
