@@ -64,6 +64,7 @@ class Homepage extends Component {
             return(vocab.name);
         });
         console.log(this.state.mode);
+        console.log('当前类别剩余词汇个数为：',currentContent.length);
         return(
             <div className='container' style={containerStyle}>
                 <div className='row' style={containerStyle}>
